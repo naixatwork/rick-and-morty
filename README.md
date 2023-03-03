@@ -33,8 +33,7 @@ https://rickandmortyapi.com/
   - unit tests for low level code
 
 ### Features:
-- [ ] Each page shows a header that says “Hello, Guest”
-Show a list of characters
+- [x] Each page shows a header that says “Hello, Guest”
 - [ ] Show a list of characters
 - [ ] Show a list of locations
 - [ ] For lists show a simple pagination, and filters by name (name and gender
@@ -52,4 +51,8 @@ Show a list of characters
 ### Good to haves:
 - [ ] implement desktop screen
 - [ ] introduce light theme and it's switcher
-- [ ] respect aria-label and accessibility
+- [ ] respect aria-label, accessibility and correct tags
+- [ ] implement active class for routes
+- [ ] show a list of episodes
+- [x] implement a cool drawer content
+- [ ] tell me a secret button at header 

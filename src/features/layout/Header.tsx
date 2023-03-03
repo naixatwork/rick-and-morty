@@ -8,7 +8,7 @@ export default function Header() {
     const { isOpen, openDrawer, closeDrawer } = useDrawer();
 
     return (
-        <AppBar position="static">
+        <AppBar position="fixed">
             <Toolbar className="flex! container mx-auto flex items-center gap-5 py-5">
                 <Drawer isOpen={isOpen} closeDrawer={closeDrawer} />
                 <IconButton size="large" aria-label="menu" onClick={openDrawer}>
