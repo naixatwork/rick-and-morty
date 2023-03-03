@@ -1,3 +1,4 @@
+import {Button, TextField} from '@mui/material'
 import Head from 'next/head'
 
 export default function Home() {
@@ -10,6 +11,13 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <main>
+                <h1 className="text-3xl font-bold underline">
+                    Hello world!
+                </h1>
+                <TextField id="outlined-basic" label="Outlined" variant="outlined"/>
+                <Button variant="text">Text</Button>
+                <Button variant="contained">Contained</Button>
+                <Button variant="outlined">Outlined</Button>
             </main>
         </>
     )
