@@ -1,14 +1,20 @@
-import '@/src/styles/globals.css'
-import { CssBaseline } from '@mui/material'
-import {StyledEngineProvider} from '@mui/material/styles'
-import type {AppProps} from 'next/app'
+import type { AppProps } from "next/app";
 
-export default function App({Component, pageProps}: AppProps) {
+import { dark } from "#/features/theme/dark";
+import "#/styles/globals.css";
 
+import { CssBaseline } from "@mui/material";
+import { StyledEngineProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/system";
+
+
+export default function App({ Component, pageProps }: AppProps) {
     return (
         <StyledEngineProvider injectFirst>
-            <CssBaseline />
-            <Component {...pageProps} />
+            <ThemeProvider theme={dark}>
+                <CssBaseline />
+                <Component {...pageProps} />
+            </ThemeProvider>
         </StyledEngineProvider>
-    )
+    );
 }
