@@ -1,0 +1,21 @@
+module.exports = {
+  tabWidth: 4,
+  trailingComma: "all",
+  importOrder: [
+    "^react(.*)",
+    "next",
+    "<THIRD_PARTY_MODULES>",
+    "@mui/",
+    "@/features/",
+    "@/components/",
+    "@/layouts/",
+    "@/hooks/",
+    "@/utils/",
+    "@/(.*)",
+    "^[./]",
+  ],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
+  plugins: [require("prettier-plugin-tailwindcss")],
+  tailwindConfig: "./tailwind.config.js",
+};
