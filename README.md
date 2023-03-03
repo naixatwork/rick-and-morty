@@ -24,7 +24,8 @@ https://rickandmortyapi.com/
     - Comfortable layers
 - Clean Code Guidelines
   - immutability
-  - pure functions first
+  - favor `explicit argument` over `implicit argument`
+  - pure functions first approach
   - naming conventions from uncle Bob's book
     - number of words based on the function or value's context
   - upto 3 parameters only
