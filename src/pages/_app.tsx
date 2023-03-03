@@ -6,6 +6,7 @@ import "#/styles/globals.css";
 import { CssBaseline } from "@mui/material";
 import { StyledEngineProvider } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/system";
+import Header from "#/features/layout/Header";
 
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -13,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <StyledEngineProvider injectFirst>
             <ThemeProvider theme={darkTheme}>
                 <CssBaseline />
+                <Header></Header>
                 <Component {...pageProps} />
             </ThemeProvider>
         </StyledEngineProvider>

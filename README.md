@@ -51,3 +51,5 @@ Show a list of characters
 
 ### Good to haves:
 - [ ] implement desktop screen
+- [ ] introduce light theme and it's switcher
+- [ ] respect aria-label and accessibility
