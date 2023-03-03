@@ -48,7 +48,7 @@ export default function Drawer({ isOpen, closeDrawer }: DrawerWrapperProps) {
                             <PeopleOutlineRoundedIcon />
                         </ListItemIcon>
                         <ListItemText primary={
-                            <Link href="/characters" className="capitalize text-white no-underline">characters</Link>
+                            <Link href="/characters" className="capitalize">characters</Link>
                         } />
                     </ListItemButton>
                 </List>

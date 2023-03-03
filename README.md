@@ -32,7 +32,7 @@ https://rickandmortyapi.com/
   - using the same level of abstraction in a unit of code
   - unit tests for low level code
 
-### Features:
+### Main Features:
 - [x] Each page shows a header that says “Hello, Guest”
 - [ ] Show a list of characters
 - [ ] Show a list of locations
@@ -55,4 +55,6 @@ https://rickandmortyapi.com/
 - [ ] implement active class for routes
 - [ ] show a list of episodes
 - [x] implement a cool drawer content
-- [ ] tell me a secret button at header 
+- [ ] tell me a secret button at header
+- [ ] use scss
+  - 7-1 file structure

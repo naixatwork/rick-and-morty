@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <ThemeProvider theme={darkTheme}>
                 <CssBaseline />
                 <Header></Header>
-                <main className="overflow-auto h-full pt-24">
+                <main className="overflow-auto h-full pt-32">
                     <Component {...pageProps} />
                 </main>
             </ThemeProvider>

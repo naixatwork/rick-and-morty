@@ -11,3 +11,7 @@
 html, body, #__next {
     @apply h-full
 }
+
+a {
+    @apply no-underline text-white;
+}
