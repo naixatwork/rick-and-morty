@@ -1,8 +1,35 @@
 # Rick and Morty App
 https://rickandmortyapi.com/
 
-### Points
+### Points:
 - this is a mobile first app.
+- File Structure:
+  - follows the LIFT style guide from https://angular.io/guide/styleguide#lift
+    - Locate
+    - Identify
+    - Flat
+    - T-DRY (Try to be DRY)
+  - feature modules
+    - components, hooks, services, functions etc. will be in a folder related to their `feature` at first then their `type`
+  - sibling tests 
+- Used Paradigms
+  - `functional programming`
+  - `procedural programming`
+  - `OOP` and design patterns related to OOP will `NOT` be used cause https://www.youtube.com/watch?v=QM1iUe6IofM
+- Design and Architecture
+  - Stratified design
+    - Straightforward implementation
+    - Abstraction barrier
+    - Minimal interface
+    - Comfortable layers
+- Clean Code Guidelines
+  - immutability
+  - pure functions first
+  - naming conventions from uncle Bob's book
+    - number of words based on the function or value's context
+  - upto 3 parameters only
+  - using the same level of abstraction in a unit of code
+  - unit tests for low level code
 
 ### Features:
 - [ ] Each page shows a header that says “Hello, Guest”
@@ -20,3 +47,6 @@ Show a list of characters
 - [ ] If a user has a favorite character instead of showing “Hello, Guest” show
   “Hello, {character name}” and it should also have a reset button at the
   header to reset the favorite character
+
+### Good to haves:
+- [ ] implement desktop screen
