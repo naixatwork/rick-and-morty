@@ -32,6 +32,8 @@ https://rickandmortyapi.com/
   - upto 3 parameters only
   - using the same level of abstraction in a unit of code
   - unit tests for low level code
+- git
+  - commit messages follow the conventional commit guideline https://www.conventionalcommits.org/en/v1.0.0/
 
 ### Main Features:
 - [x] Each page shows a header that says “Hello, Guest”
@@ -39,8 +41,8 @@ https://rickandmortyapi.com/
 - [x] Show a list of locations
 - [x] For lists show a simple pagination, and filters by name (name and gender
   for characters)
-- [ ] Each location and character should have its own unique page
-- [ ] Each single location page should have a list of its residents/characters
+- [x] Each location and character should have its own unique page
+- [x] Each single location page should have a list of its residents/characters
 - [x] Each character page should have a detail about the character, list of the
   episodes they played in and where they live
 - [ ] Each character should have a button to set the character as their favorite
@@ -56,6 +58,9 @@ https://rickandmortyapi.com/
 - [x] The design does not matter, what matters is project structure and clean code
 
 ### Good to haves:
+- [ ] implement unit tests for low level code
+- [ ] add loading for pages
+- [ ] host the app
 - [ ] implement desktop screen
 - [ ] introduce light theme and it's switcher
 - [ ] respect aria-label, accessibility and correct tags
@@ -65,4 +70,3 @@ https://rickandmortyapi.com/
 - [ ] tell me a secret button at header
 - [ ] use scss
   - 7-1 file structure
-- [ ] add loading for ssr pages
