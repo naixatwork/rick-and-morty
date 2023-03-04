@@ -8,7 +8,7 @@ export type Character = {
     origin: {name: string, url: string};
     location: {name: string, url: string};
     image: string;
-    episode: object[];
+    episode: string[];
     url: string;
     created: string;
 };

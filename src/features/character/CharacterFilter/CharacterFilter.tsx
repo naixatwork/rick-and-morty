@@ -1,9 +1,18 @@
 import { Controller, useForm } from "react-hook-form";
 
+import { Character } from "#/features/character/character.type";
+import { ResponseWithPagination } from "#/features/endpoint/endpoint.type";
+
 import NavigateBeforeRounedIcon from "@mui/icons-material/NavigateBeforeRounded";
 import NavigateNextRoundedIcon from "@mui/icons-material/NavigateNextRounded";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
-import { Button, IconButton, InputAdornment, TextField } from "@mui/material";
+import {
+    Button,
+    Chip,
+    IconButton,
+    InputAdornment,
+    TextField,
+} from "@mui/material";
 
 import GenderField from "../GenderField/GenderField";
 
@@ -16,12 +25,15 @@ export type CharacterFilterQuery = {
 type CharacterFilterProps = {
     defaultValues: Partial<CharacterFilterQuery>;
     submitCallBack: (values: CharacterFilterQuery) => void;
+    pagination: ResponseWithPagination<Character>["info"];
 };
 
 export default function CharacterFilter({
     defaultValues,
     submitCallBack,
+    pagination,
 }: CharacterFilterProps) {
+    console.log(pagination);
     const { handleSubmit, control, setValue, getValues, watch } =
         useForm<CharacterFilterQuery>({
             defaultValues: {
@@ -76,21 +88,15 @@ export default function CharacterFilter({
                 )}
             />
             <div className="flex w-full gap-3">
-                <div className="flex w-full items-center gap-2">
-                    <p className="text-lg">
-                        <span className="text-2xl font-bold">
-                            {watch("page")}
-                        </span>{" "}
-                        / 12
-                    </p>
+                <div className="flex w-full items-center gap-2 text-lg">
+                    <span className="text-2xl font-bold">{watch("page")}</span>{" "}
+                    / {pagination.pages}
+                    <Chip label={`total: ${pagination.count}`} />
                 </div>
-                <IconButton
-                    disabled={parseInt(watch("page")) === 1}
-                    onClick={decrementPage}
-                >
+                <IconButton disabled={!pagination.prev} onClick={decrementPage}>
                     <NavigateBeforeRounedIcon />
                 </IconButton>
-                <IconButton onClick={incrementPage}>
+                <IconButton disabled={!pagination.next} onClick={incrementPage}>
                     <NavigateNextRoundedIcon />
                 </IconButton>
             </div>

@@ -1,17 +1,38 @@
 import { Character } from "#/features/character/character.type";
 
+import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
+import {
+    Button,
+    Card,
+    CardActions,
+    CardContent,
+    CardHeader,
+    CardMedia,
+    IconButton,
+} from "@mui/material";
 
 
-import {Card, CardContent, CardHeader, CardMedia, Divider} from "@mui/material";
+type CharacterCardProps = {
+    character: Character,
+    onDetailClick?: (character: Character) => void
+}
 
+export default function CharacterCard({character, onDetailClick = () => {}}: CharacterCardProps) {
+    const clickAction = () => {
+        onDetailClick(character);
+    }
 
-export default function CharacterCard(character: Character) {
     return (
-        <Card className="w-full">
+        <Card className="w-full lg:w-[400px]" onClick={clickAction}>
             <CardHeader
                 title={character.name}
+                action={
+                    <IconButton aria-label="settings">
+                        <MoreVertRoundedIcon />
+                    </IconButton>
+                }
                 subheader={
-                    <div className="text-inherit flex gap-1">
+                    <div className="flex gap-1 text-inherit">
                         <span
                             className={
                                 character.status === "Alive"
@@ -34,21 +55,36 @@ export default function CharacterCard(character: Character) {
             <CardContent className="flex flex-col gap-2">
                 <div className="flex justify-between gap-2">
                     <p className="capitalize">location</p>
-                    <span className="block flex-1 bg-gray-700 h-[1px] self-center"></span>
+                    <span className="block h-[1px] flex-1 self-center bg-gray-700"></span>
                     <p>{character.location.name}</p>
                 </div>
                 <div className="flex justify-between gap-2">
                     <p className="capitalize">origin</p>
-                    <span className="block flex-1 bg-gray-700 h-[1px] self-center"></span>
+                    <span className="block h-[1px] flex-1 self-center bg-gray-700"></span>
                     <p>{character.origin.name}</p>
                 </div>
                 <div className="flex justify-between gap-2">
                     <p className="capitalize">species</p>
-                    <span className="block flex-1 bg-gray-700 h-[1px] self-center"></span>
+                    <span className="block h-[1px] flex-1 self-center bg-gray-700"></span>
                     <p>{character.species}</p>
                 </div>
-
+                <div className="flex justify-between gap-2">
+                    <p className="capitalize">episodes</p>
+                    <span className="block h-[1px] flex-1 self-center bg-gray-700"></span>
+                    <p>{character.episode.length}</p>
+                </div>
             </CardContent>
+            <CardActions disableSpacing>
+                <div className="flex w-full justify-end gap-2 p-2">
+                    <Button
+                        onClick={clickAction}
+                        variant="contained"
+                        endIcon={<MoreVertRoundedIcon />}
+                    >
+                        details
+                    </Button>
+                </div>
+            </CardActions>
         </Card>
     );
 }
