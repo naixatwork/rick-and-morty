@@ -1,14 +1,12 @@
 import { Character } from "#/features/character/character.type";
 import getMultipleEpisodes from "#/features/episodes/getMultipleEpisodes";
-import getLastElement from "#/utils/getLastElement";
+import extractUrlTail from "#/utils/extractUrlTail";
 
 export default async function getCharacterEpisodes(
-    characterEpisodes: Character["episode"],
+    episodeUrls: Character["episode"],
 ) {
-    const characterUrlEpisodesCopy = [...characterEpisodes];
+    const episodeUrlsCopy = [...episodeUrls];
 
-    const extractIdFromEpisodeUrl = (episodeUrl: string) =>
-        getLastElement(episodeUrl.split("/"));
-    const extractedIds = characterUrlEpisodesCopy.map(extractIdFromEpisodeUrl);
+    const extractedIds = episodeUrlsCopy.map(extractUrlTail);
     return getMultipleEpisodes(extractedIds);
 }
