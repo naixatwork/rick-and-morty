@@ -22,8 +22,9 @@ https://rickandmortyapi.com/
     - Abstraction barrier
     - Minimal interface
     - Comfortable layers
-- Clean Code Guidelines
+- Clean Code Guidelines 
   - immutability
+    - copy-on-write
   - favor `explicit argument` over `implicit argument`
   - pure functions first approach
   - naming conventions from uncle Bob's book

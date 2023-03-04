@@ -1,8 +1,8 @@
 import {describe, test, expect} from "vitest";
-import endpoint from "./endpoint"
+import getApiUrl from "./getApiUrl"
 
 describe("!endpoint", () => {
-    test("it should return #NEXT_PUBLIC_API", () => {
-        expect(endpoint()).toBe(process.env.VITE_RICK_AND_MORTY_API);
+    test("it should return #RICK_AND_MORTY_API", () => {
+        expect(getApiUrl()).toBe(process.env.VITE_RICK_AND_MORTY_API);
     })
 })

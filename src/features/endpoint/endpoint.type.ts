@@ -1,9 +1,9 @@
-export type EndPointResponse<T> = {
-    "info": {
-        "count": 826,
-        "pages": 42,
-        "next": "https://rickandmortyapi.com/api/character/?page=2",
-        "prev": null
-    },
-    "results": T
-}
+export type ResponseWithPagination<T> = {
+    info: {
+        count: number;
+        pages: number;
+        next: string;
+        prev: string | null;
+    };
+    results: T;
+};
