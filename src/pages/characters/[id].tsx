@@ -62,7 +62,6 @@ export default function CharacterPage({
     character,
     episodes,
 }: CharacterPageProps) {
-    console.log(episodes);
     return (
         <div className="container mx-auto flex flex-col gap-5 px-3">
             <div className="flex items-center justify-center gap-2">

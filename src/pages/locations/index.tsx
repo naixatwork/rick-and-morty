@@ -50,7 +50,6 @@ export default function LocationListPage({
     const filterLocations = (query: LocationFilterQuery) => {
         router.push("/locations" + withQuery(query));
     };
-    console.log(locationsListResponse);
 
     const redirectToLocationDetail = (location: Location) => {
         router.push(`/locations/${location.id}`);
