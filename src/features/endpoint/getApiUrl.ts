@@ -5,6 +5,5 @@ export default function getApiUrl(...append: string[]): string {
 
     const appendCopy = [...append];
     const appendString = appendCopy.join("");
-    console.log({lol: process.env.RICK_AND_MORTY_API + appendString})
     return process.env.RICK_AND_MORTY_API + appendString;
 }

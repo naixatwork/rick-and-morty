@@ -10,14 +10,16 @@ import {
     CardMedia,
     IconButton,
 } from "@mui/material";
+import {ReactNode} from "react";
 
 
 type CharacterCardProps = {
     character: Character,
+    actionContent?: ReactNode,
     onDetailClick?: (character: Character) => void
 }
 
-export default function CharacterCard({character, onDetailClick = () => {}}: CharacterCardProps) {
+export default function CharacterCard({character, actionContent = <></>, onDetailClick = () => {}}: CharacterCardProps) {
     const clickAction = () => {
         onDetailClick(character);
     }
@@ -75,15 +77,7 @@ export default function CharacterCard({character, onDetailClick = () => {}}: Cha
                 </div>
             </CardContent>
             <CardActions disableSpacing>
-                <div className="flex w-full justify-end gap-2 p-2">
-                    <Button
-                        onClick={clickAction}
-                        variant="contained"
-                        endIcon={<MoreVertRoundedIcon />}
-                    >
-                        details
-                    </Button>
-                </div>
+                {actionContent}
             </CardActions>
         </Card>
     );

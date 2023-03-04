@@ -6,9 +6,12 @@ import CharacterFilter, {
     CharacterFilterQuery,
 } from "#/features/character/CharacterFilter/CharacterFilter";
 import { Character } from "#/features/character/character.type";
-import getCharacters from "#/features/character/getCharacters";
+import getCharactersList from "#/features/character/getCharactersList";
 import { ResponseWithPagination } from "#/features/endpoint/endpoint.type";
 import withQuery from "#/features/endpoint/query/withQuery";
+
+import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
+import { Button } from "@mui/material";
 
 type CharactersPageProps = {
     charactersResponse: ResponseWithPagination<Character[]>;
@@ -17,7 +20,7 @@ type CharactersPageProps = {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const { query } = context;
-    const charactersResponse = await getCharacters(query);
+    const charactersResponse = await getCharactersList(query);
 
     return {
         props: {
@@ -38,7 +41,7 @@ export default function CharactersPage({
     };
 
     const onCharacterClick = (character: Character) => {
-        router.push(`/characters/${character.id}`)
+        router.push(`/characters/${character.id}`);
     };
 
     return (
@@ -61,6 +64,16 @@ export default function CharactersPage({
                             key={character.id}
                             character={character}
                             onDetailClick={onCharacterClick}
+                            actionContent={
+                                <div className="flex w-full justify-end gap-2 p-2">
+                                    <Button
+                                        variant="contained"
+                                        endIcon={<MoreVertRoundedIcon />}
+                                    >
+                                        details
+                                    </Button>
+                                </div>
+                            }
                         />
                     ))}
             </div>

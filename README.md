@@ -35,19 +35,25 @@ https://rickandmortyapi.com/
 
 ### Main Features:
 - [x] Each page shows a header that says “Hello, Guest”
-- [ ] Show a list of characters
+- [x] Show a list of characters
 - [ ] Show a list of locations
-- [ ] For lists show a simple pagination, and filters by name (name and gender
+- [x] For lists show a simple pagination, and filters by name (name and gender
   for characters)
 - [ ] Each location and character should have its own unique page
 - [ ] Each single location page should have a list of its residents/characters
-- [ ] Each character page should have a detail about the character, list of the
+- [x] Each character page should have a detail about the character, list of the
   episodes they played in and where they live
 - [ ] Each character should have a button to set the character as their favorite
   character and it should be saved
 - [ ] If a user has a favorite character instead of showing “Hello, Guest” show
   “Hello, {character name}” and it should also have a reset button at the
   header to reset the favorite character
+
+### Fundamentals:
+- [x] Use typescript
+- [ ] Saving the character for user should be on cookie and should be done by the server
+- [ ] Have at least 1 page using SSR the rest should have an SSG strategy with 10 minutes cache
+- [ ] The design does not matter, what matters is project structure and clean code
 
 ### Good to haves:
 - [ ] implement desktop screen
