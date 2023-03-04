@@ -13,14 +13,18 @@ import withQuery from "#/features/endpoint/query/withQuery";
 import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
 import { Button } from "@mui/material";
 
-type CharactersPageProps = {
-    charactersResponse: ResponseWithPagination<Character[]>;
-    query: CharacterFilterQuery;
-};
-
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const { query } = context;
     const charactersResponse = await getCharactersList(query);
+
+    if (charactersResponse.error) {
+        return {
+            redirect: {
+                destination: "/characters",
+                permanent: false,
+            }
+        }
+    }
 
     return {
         props: {
@@ -30,7 +34,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
 };
 
-export default function CharactersPage({
+type CharactersPageProps = {
+    charactersResponse: ResponseWithPagination<Character[]>;
+    query: CharacterFilterQuery;
+};
+
+export default function CharacterListPage({
     charactersResponse,
     query,
 }: CharactersPageProps) {
@@ -40,7 +49,7 @@ export default function CharactersPage({
         router.push("/characters" + withQuery(query));
     };
 
-    const onCharacterClick = (character: Character) => {
+    const redirectToCharacterDetail = (character: Character) => {
         router.push(`/characters/${character.id}`);
     };
 
@@ -63,7 +72,7 @@ export default function CharactersPage({
                         <CharacterCard
                             key={character.id}
                             character={character}
-                            onDetailClick={onCharacterClick}
+                            onDetailClick={redirectToCharacterDetail}
                             actionContent={
                                 <div className="flex w-full justify-end gap-2 p-2">
                                     <Button

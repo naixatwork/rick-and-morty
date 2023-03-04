@@ -1,44 +1,32 @@
-import { Controller, useForm } from "react-hook-form";
+import {Controller, useForm} from "react-hook-form";
 
-import { Character } from "#/features/character/character.type";
+import { CharacterFilterQuery } from "#/features/character/CharacterFilter/CharacterFilter";
 import { ResponseWithPagination } from "#/features/endpoint/endpoint.type";
+import { Location } from "#/features/location/location.type";
+import {Button, InputAdornment, TextField} from "@mui/material";
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import PaginationFilter from "#/features/pagination/PaginationFilter";
 
-import NavigateBeforeRounedIcon from "@mui/icons-material/NavigateBeforeRounded";
-import NavigateNextRoundedIcon from "@mui/icons-material/NavigateNextRounded";
-import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
-import {
-    Button,
-    Chip,
-    IconButton,
-    InputAdornment,
-    TextField,
-} from "@mui/material";
-
-import GenderField from "../GenderField/GenderField";
-
-export type CharacterFilterQuery = {
+export type LocationFilterQuery = {
     name: string;
-    gender: string;
     page: string;
 };
 
-type CharacterFilterProps = {
-    defaultValues: Partial<CharacterFilterQuery>;
-    submitCallBack: (values: CharacterFilterQuery) => void;
-    pagination: ResponseWithPagination<Character>["info"];
+type LocationFilterProps = {
+    defaultValues: Partial<LocationFilterQuery>;
+    submitCallBack: (values: LocationFilterQuery) => void;
+    pagination: ResponseWithPagination<Location>["info"];
 };
 
-export default function CharacterFilter({
+export default function LocationFilter({
     defaultValues,
     submitCallBack,
     pagination,
-}: CharacterFilterProps) {
+}: LocationFilterProps) {
     const { handleSubmit, control, setValue, getValues, watch } =
-        useForm<CharacterFilterQuery>({
+        useForm<LocationFilterQuery>({
             defaultValues: {
                 name: defaultValues?.name || "",
-                gender: defaultValues?.gender || "",
                 page: defaultValues?.page || "1",
             },
         });
@@ -76,13 +64,6 @@ export default function CharacterFilter({
                     />
                 )}
             />
-            <Controller
-                name="gender"
-                control={control}
-                render={({ field: { value, onChange } }) => (
-                    <GenderField value={value} onChange={onChange} />
-                )}
-            />
             <PaginationFilter
                 page={watch("page")}
                 pagination={pagination}
@@ -93,5 +74,5 @@ export default function CharacterFilter({
                 filter
             </Button>
         </form>
-    );
+    )
 }

@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import { Character } from "#/features/character/character.type";
 
 import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
@@ -10,19 +12,21 @@ import {
     CardMedia,
     IconButton,
 } from "@mui/material";
-import {ReactNode} from "react";
-
 
 type CharacterCardProps = {
-    character: Character,
-    actionContent?: ReactNode,
-    onDetailClick?: (character: Character) => void
-}
+    character: Character;
+    actionContent?: ReactNode;
+    onDetailClick?: (character: Character) => void;
+};
 
-export default function CharacterCard({character, actionContent = <></>, onDetailClick = () => {}}: CharacterCardProps) {
+export default function CharacterCard({
+    character,
+    actionContent = <></>,
+    onDetailClick = () => {},
+}: CharacterCardProps) {
     const clickAction = () => {
         onDetailClick(character);
-    }
+    };
 
     return (
         <Card className="w-full lg:w-[400px]" onClick={clickAction}>
@@ -76,9 +80,7 @@ export default function CharacterCard({character, actionContent = <></>, onDetai
                     <p>{character.episode.length}</p>
                 </div>
             </CardContent>
-            <CardActions disableSpacing>
-                {actionContent}
-            </CardActions>
+            <CardActions disableSpacing>{actionContent}</CardActions>
         </Card>
     );
 }

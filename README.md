@@ -36,7 +36,7 @@ https://rickandmortyapi.com/
 ### Main Features:
 - [x] Each page shows a header that says “Hello, Guest”
 - [x] Show a list of characters
-- [ ] Show a list of locations
+- [x] Show a list of locations
 - [x] For lists show a simple pagination, and filters by name (name and gender
   for characters)
 - [ ] Each location and character should have its own unique page
@@ -53,7 +53,7 @@ https://rickandmortyapi.com/
 - [x] Use typescript
 - [ ] Saving the character for user should be on cookie and should be done by the server
 - [ ] Have at least 1 page using SSR the rest should have an SSG strategy with 10 minutes cache
-- [ ] The design does not matter, what matters is project structure and clean code
+- [x] The design does not matter, what matters is project structure and clean code
 
 ### Good to haves:
 - [ ] implement desktop screen

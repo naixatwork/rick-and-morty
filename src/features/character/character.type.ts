@@ -1,5 +1,4 @@
 export type Character = {
-    [x: string]: Key | null | undefined;
     id: number;
     name: string;
     status: string;

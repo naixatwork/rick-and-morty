@@ -57,8 +57,6 @@ type CharacterPageProps = {
 
 export default function CharacterPage({character, characterEpisodes}: CharacterPageProps) {
     const router = useRouter();
-    console.log(characterEpisodes)
-
     return (
         <div className="container mx-auto flex flex-col gap-5 px-3">
             <div className="flex justify-center items-center gap-2">

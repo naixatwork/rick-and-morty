@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
 import PeopleOutlineRoundedIcon from "@mui/icons-material/PeopleOutlineRounded";
 import {
     Avatar,
@@ -49,6 +49,14 @@ export default function Drawer({ isOpen, closeDrawer }: DrawerWrapperProps) {
                         </ListItemIcon>
                         <ListItemText primary={
                             <Link href="/characters" className="capitalize">characters</Link>
+                        } />
+                    </ListItemButton>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <LocationOnRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={
+                            <Link href="/locations" className="capitalize">locations</Link>
                         } />
                     </ListItemButton>
                 </List>
