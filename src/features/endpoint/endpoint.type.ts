@@ -5,5 +5,6 @@ export type ResponseWithPagination<T> = {
         next: string;
         prev: string | null;
     };
+    error?: string;
     results: T;
 };

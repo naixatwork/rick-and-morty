@@ -59,3 +59,4 @@ https://rickandmortyapi.com/
 - [ ] tell me a secret button at header
 - [ ] use scss
   - 7-1 file structure
+- [ ] add loading for ssr pages
