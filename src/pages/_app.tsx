@@ -6,23 +6,27 @@ import type { AppProps } from "next/app";
 import Header from "#/features/layout/Header";
 import { darkTheme } from "#/features/theme/dark/dark.theme";
 import "#/styles/globals.css";
+import parseCookieString from "#/utils/parseCookieString";
 
 import { CssBaseline } from "@mui/material";
 import { StyledEngineProvider } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/system";
 
-
 interface WidthCookiesProps extends AppProps {
     cookies: Record<string, string>;
 }
 
-export default function App({ Component, pageProps, cookies }: WidthCookiesProps) {
+export default function App({
+    Component,
+    pageProps,
+    cookies,
+}: WidthCookiesProps) {
     return (
         <StyledEngineProvider injectFirst>
             <ThemeProvider theme={darkTheme}>
                 <CssBaseline />
                 <Header cookies={cookies || {}}></Header>
-                <main className="overflow-auto h-full pt-32">
+                <main className="h-full overflow-auto pt-32">
                     <Component {...pageProps} cookies={cookies} />
                 </main>
             </ThemeProvider>
@@ -30,17 +34,18 @@ export default function App({ Component, pageProps, cookies }: WidthCookiesProps
     );
 }
 
-App.getInitialProps = async ({ Component, ctx }: { Component: any; ctx: NextPageContext }) => {
+App.getInitialProps = async ({
+    Component,
+    ctx,
+}: {
+    Component: any;
+    ctx: NextPageContext;
+}) => {
+    const cookies: Record<string, string> = parseCookieString(
+        ctx.req?.headers.cookie || "",
+    );
+
     let pageProps = {};
-    let cookies: Record<string, string> = {};
-
-    if (ctx.req && ctx.req.headers.cookie) {
-        ctx.req.headers.cookie.split(';').forEach((cookie: string) => {
-            const [name, value] = cookie.split('=');
-            cookies[name.trim()] = value.trim();
-        });
-    }
-
     if (Component.getInitialProps) {
         pageProps = await Component.getInitialProps(ctx);
     }
