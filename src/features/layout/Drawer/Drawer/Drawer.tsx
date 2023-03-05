@@ -44,20 +44,21 @@ export default function Drawer({ isOpen, closeDrawer }: DrawerWrapperProps) {
                 <Divider></Divider>
                 <List>
                     <ListItemButton>
-                        <ListItemIcon>
-                            <PeopleOutlineRoundedIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={
-                            <Link href="/characters" className="capitalize">characters</Link>
-                        } />
+                        <Link href="/characters" className="capitalize flex items-center">
+                            <ListItemIcon>
+                                <PeopleOutlineRoundedIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="characters" />
+                        </Link>
                     </ListItemButton>
                     <ListItemButton>
-                        <ListItemIcon>
-                            <LocationOnRoundedIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={
-                            <Link href="/locations" className="capitalize">locations</Link>
-                        } />
+                        <Link href="/locations" className="capitalize flex items-center">
+                            <ListItemIcon>
+                                <LocationOnRoundedIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="locations" />
+                        </Link>
+
                     </ListItemButton>
                 </List>
             </div>
