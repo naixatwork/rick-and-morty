@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useRouter } from "next/router";
 
 import CharacterCard from "#/features/character/CharacterCard/CharacterCard";
 import { Character } from "#/features/character/character.type";
@@ -8,6 +9,7 @@ import getCharactersList from "#/features/character/getCharactersList";
 import { Episode } from "#/features/episodes/episodes.type";
 
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
+import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import {
     IconButton,
     Paper,
@@ -56,20 +58,43 @@ export const getStaticProps: GetStaticProps = async (context) => {
 type CharacterPageProps = {
     character: Character;
     episodes: Episode[];
+    cookies: Record<string, any>;
 };
 
 export default function CharacterPage({
     character,
     episodes,
+    cookies,
 }: CharacterPageProps) {
+    const router = useRouter();
+
+    console.log(cookies)
+    const setAsFavoriteCharacter = () => {
+        fetch("/api/saveFavoriteCharacter", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ favoriteCharacter: character.name }),
+        })
+            .then((res) => res.json())
+            .then(() => {
+                router.reload();
+            });
+    };
+
     return (
         <div className="container mx-auto flex flex-col gap-5 px-3">
             <div className="flex items-center justify-center gap-2">
                 <h1 className="text-center text-3xl uppercase">
                     {character.name}
                 </h1>
-                <IconButton size="large">
-                    <FavoriteBorderRoundedIcon fontSize="large" />
+                <IconButton size="large" onClick={setAsFavoriteCharacter}>
+                    {
+                        cookies.favoriteCharacter && cookies.favoriteCharacter.toUpperCase() === character.name.toUpperCase() ?
+                            <FavoriteRoundedIcon fontSize="large" /> :
+                            <FavoriteBorderRoundedIcon fontSize="large" />
+                    }
                 </IconButton>
             </div>
             <CharacterCard character={character} />

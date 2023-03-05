@@ -12,6 +12,7 @@ import withQuery from "#/features/endpoint/query/withQuery";
 
 import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
 import { Button } from "@mui/material";
+import {cookies} from "next/headers";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const { query } = context;
@@ -43,6 +44,7 @@ export default function CharacterListPage({
     charactersResponse,
     query,
 }: CharactersPageProps) {
+
     const router = useRouter();
 
     const filterCharacters = (query: CharacterFilterQuery) => {

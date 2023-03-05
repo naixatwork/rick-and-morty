@@ -45,17 +45,17 @@ https://rickandmortyapi.com/
 - [x] Each single location page should have a list of its residents/characters
 - [x] Each character page should have a detail about the character, list of the
   episodes they played in and where they live
-- [ ] Each character should have a button to set the character as their favorite
+- [x] Each character should have a button to set the character as their favorite
   character and it should be saved
-- [ ] If a user has a favorite character instead of showing “Hello, Guest” show
+- [x] If a user has a favorite character instead of showing “Hello, Guest” show
   “Hello, {character name}” and it should also have a reset button at the
   header to reset the favorite character
 
 ### Fundamentals:
 - [x] Use typescript
-- [ ] Saving the character for user should be on cookie and should be done by the server
-- [ ] Have at least 1 page using SSR the rest should have an SSG strategy with 10 minutes cache
-- [x] The design does not matter, what matters is project structure and clean code
+- [x] Saving the character for user should be on cookie and should be done by the server
+- [x] Have at least 1 page using SSR the rest should have an SSG strategy with 10 minutes cache
+- [ ] The design does not matter, what matters is project structure and clean code
 
 ### Good to haves:
 - [ ] implement unit tests for low level code
