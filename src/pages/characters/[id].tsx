@@ -101,7 +101,7 @@ export default function CharacterPage({
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {episodes &&
+                        {character.episode.length > 0 &&
                             episodes.map((episode) => (
                                 <TableRow
                                     key={episode.name}
