@@ -38,7 +38,7 @@ export default function Drawer({ isOpen, closeDrawer }: DrawerWrapperProps) {
                     </Badge>
                     <div className="flex flex-col gap-2">
                         <h1 className="font-bold text-xl">Guest</h1>
-                        <h1 className="text-sm text-green-400">wablabbe dabdab</h1>
+                        <h1 className="text-sm text-green-400">wablabbe dabdab!</h1>
                     </div>
                 </div>
                 <Divider></Divider>
