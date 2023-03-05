@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 import { NextPageContext } from "next";
 import type { AppProps } from "next/app";
 
@@ -11,6 +9,7 @@ import parseCookieString from "#/utils/parseCookieString";
 import { CssBaseline } from "@mui/material";
 import { StyledEngineProvider } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/system";
+import RouterLoading from "#/features/loading/RouterLoading";
 
 interface WidthCookiesProps extends AppProps {
     cookies: Record<string, string>;
@@ -26,7 +25,7 @@ export default function App({
             <ThemeProvider theme={darkTheme}>
                 <CssBaseline />
                 <Header cookies={cookies || {}}></Header>
-                <main className="h-full overflow-auto pt-32">
+                <main className="h-full overflow-auto pt-28">
                     <Component {...pageProps} cookies={cookies} />
                 </main>
             </ThemeProvider>

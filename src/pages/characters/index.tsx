@@ -1,18 +1,25 @@
+import {useEffect, useState} from "react";
+
+
+
 import { GetServerSideProps } from "next";
+import { cookies } from "next/headers";
 import { useRouter } from "next/router";
 
+
+
 import CharacterCard from "#/features/character/CharacterCard/CharacterCard";
-import CharacterFilter, {
-    CharacterFilterQuery,
-} from "#/features/character/CharacterFilter/CharacterFilter";
+import CharacterFilter, { CharacterFilterQuery } from "#/features/character/CharacterFilter/CharacterFilter";
 import { Character } from "#/features/character/character.type";
 import getCharactersList from "#/features/character/getCharactersList";
 import { ResponseWithPagination } from "#/features/endpoint/endpoint.type";
 import withQuery from "#/features/endpoint/query/withQuery";
 
+
+
 import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
 import { Button } from "@mui/material";
-import {cookies} from "next/headers";
+
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const { query } = context;

@@ -5,6 +5,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import {AppBar, Button, IconButton, Toolbar} from "@mui/material";
 import removeFavoriteCharacterReq from "#/features/character/favoriteCharacter/removeFavoriteCharacter";
 import {useRouter} from "next/router";
+import RouterLoading from "#/features/loading/RouterLoading";
 
 
 type HeaderProps = {
@@ -32,6 +33,7 @@ export default function Header({cookies}: HeaderProps) {
                     remove
                 </Button>
             </Toolbar>
+            <RouterLoading />
         </AppBar>
     );
 }

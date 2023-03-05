@@ -55,12 +55,12 @@
 - [x] Use typescript
 - [x] Saving the character for user should be on cookie and should be done by the server
 - [x] Have at least 1 page using SSR the rest should have an SSG strategy with 10 minutes cache
-- [ ] The design does not matter, what matters is project structure and clean code
+- [x] The design does not matter, what matters is project structure and clean code
 
 ### Good to haves:
 - [ ] implement unit tests for low level code
 - [ ] implement rendering upon cookie change
-- [ ] add loading for pages
+- [x] add router loading
 - [ ] host the app
 - [ ] implement desktop screen
 - [ ] introduce light theme and it's switcher
