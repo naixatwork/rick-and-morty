@@ -1,4 +1,7 @@
 import Head from "next/head";
+import PeopleOutlineRoundedIcon from "@mui/icons-material/PeopleOutlineRounded";
+import Link from "next/link";
+import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 
 export default function Home() {
     return (
@@ -15,8 +18,16 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div>
-                lolk
+            <div className="container mx-auto flex flex-col gap-5 px-3">
+                <h1 className="text-center text-3xl uppercase">welcome</h1>
+                <Link href="characters" className="flex gap-5 items-center bg-slate-800 rounded w-full p-3 shadow">
+                    <PeopleOutlineRoundedIcon fontSize="large" />
+                    <p className="text-2xl">Characters</p>
+                </Link>
+                <Link href="locations" className="flex gap-5 items-center bg-slate-800 rounded w-full p-3 shadow">
+                    <LocationOnRoundedIcon fontSize="large" />
+                    <p className="text-2xl">Locations</p>
+                </Link>
             </div>
         </>
     );

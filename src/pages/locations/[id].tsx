@@ -24,6 +24,7 @@ import {
 import {Character} from "#/features/character/character.type";
 import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
 import {useRouter} from "next/router";
+import getSSGRevalidateDuration from "#/features/cache/getSSGRevalidateDuration";
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const locationsListResponse = await getLocationsList();
@@ -56,6 +57,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
             location,
             residents
         },
+        revalidate: getSSGRevalidateDuration()
     };
 };
 

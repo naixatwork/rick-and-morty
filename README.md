@@ -1,5 +1,5 @@
 # Rick and Morty App
-https://rickandmortyapi.com/
+### a user interface project for https://rickandmortyapi.com/
 
 ### Points:
 - this is a mobile first app.
@@ -59,6 +59,7 @@ https://rickandmortyapi.com/
 
 ### Good to haves:
 - [ ] implement unit tests for low level code
+- [ ] implement rendering upon cookie change
 - [ ] add loading for pages
 - [ ] host the app
 - [ ] implement desktop screen

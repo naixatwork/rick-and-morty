@@ -20,6 +20,7 @@ import {
     TableHead,
     TableRow,
 } from "@mui/material";
+import getSSGRevalidateDuration from "#/features/cache/getSSGRevalidateDuration";
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const charactersResponse = await getCharactersList();
@@ -52,6 +53,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
             character,
             episodes,
         },
+        revalidate: getSSGRevalidateDuration()
     };
 };
 
@@ -68,7 +70,6 @@ export default function CharacterPage({
 }: CharacterPageProps) {
     const router = useRouter();
 
-    console.log(cookies)
     const setAsFavoriteCharacter = () => {
         fetch("/api/saveFavoriteCharacter", {
             method: "POST",
