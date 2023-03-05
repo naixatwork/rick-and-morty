@@ -21,6 +21,7 @@ import {
     TableRow,
 } from "@mui/material";
 import getSSGRevalidateDuration from "#/features/cache/getSSGRevalidateDuration";
+import setFavoriteCharacter from "#/features/character/favoriteCharacter/setFavoriteCharacter";
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const charactersResponse = await getCharactersList();
@@ -71,17 +72,7 @@ export default function CharacterPage({
     const router = useRouter();
 
     const setAsFavoriteCharacter = () => {
-        fetch("/api/saveFavoriteCharacter", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ favoriteCharacter: character.name }),
-        })
-            .then((res) => res.json())
-            .then(() => {
-                router.reload();
-            });
+        setFavoriteCharacter(character, router.reload);
     };
 
     return (
