@@ -58,11 +58,12 @@
 - [x] The design does not matter, what matters is project structure and clean code
 
 ### Good to haves:
-- [ ] implement unit tests for low level code
+- [x] implement unit tests for low level code
 - [ ] implement rendering upon cookie change
 - [x] add router loading
-- [ ] host the app
-- [ ] implement desktop screen
+- [x] host the app
+  - https://rick-and-morty-naixatwork.vercel.app/
+- [x] implement desktop screen
 - [ ] introduce light theme and it's switcher
 - [ ] respect aria-label, accessibility and correct tags
 - [ ] implement active class for routes
