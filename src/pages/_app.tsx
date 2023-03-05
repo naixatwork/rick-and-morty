@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 import Header from "#/features/layout/Header";
 import { darkTheme } from "#/features/theme/dark/dark.theme";
 import "#/styles/globals.css";
-import parseCookieString from "#/utils/parseCookieString";
+import parseCookieString from "#/utils/parseCookieString/parseCookieString";
 
 import { CssBaseline } from "@mui/material";
 import { StyledEngineProvider } from "@mui/material/styles";

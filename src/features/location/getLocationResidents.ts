@@ -1,7 +1,7 @@
 import getCharacter from "#/features/character/getCharacter";
 import { Location } from "#/features/location/location.type";
-import extractUrlTail from "#/utils/extractUrlTail";
-import getRangedString from "#/utils/getRangedString";
+import extractUrlTail from "#/utils/extractUrlTail/extractUrlTail";
+import getRangedString from "#/utils/getRangedString/getRangedString";
 
 export default async function getCharacterEpisodes(
     residentUrls: Location["residents"],

@@ -7,7 +7,7 @@ import getLocation from "#/features/location/getLocation";
 import getCharacterEpisodes from "#/features/location/getLocationResidents";
 import getLocationsList from "#/features/location/getLocationsList";
 import { Location } from "#/features/location/location.type";
-import extractUrlTail from "#/utils/extractUrlTail";
+import extractUrlTail from "#/utils/extractUrlTail/extractUrlTail";
 
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import {

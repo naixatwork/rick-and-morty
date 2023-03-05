@@ -1,7 +1,7 @@
 import withEntity from "#/features/endpoint/entity/withEntity";
 import getApiUrl from "#/features/endpoint/getApiUrl";
 import { Episode } from "#/features/episodes/episodes.type";
-import getRangedString from "#/utils/getRangedString";
+import getRangedString from "#/utils/getRangedString/getRangedString";
 
 export default async function getMultipleEpisodes(
     ids: string[],
